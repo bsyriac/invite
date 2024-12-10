@@ -1,21 +1,64 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* globals.css */
+@keyframes fall {
+  0% {
+    transform: translateY(-50px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
   }
 }
 
+.falling-blossoms {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.blossom {
+  position: absolute;
+  top: -50px;
+  opacity: 0.8;
+  animation: fall 8s linear infinite;
+  animation-delay: calc(-8s * random);
+}
+
+.blossom:nth-child(odd) {
+  animation-duration: 10s;
+}
+
+.blossom:nth-child(even) {
+  animation-duration: 12s;
+}
+
+.blossom img {
+  width: 25px;
+  height: 25px;
+}
+
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.loader {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  position: absolute;
+  z-index: 9999;
 }
