@@ -15,7 +15,7 @@ const generateBlossoms = () => {
           animationDelay: `${randomDelay}s`,
         }}
       >
-        <img src="/cherry-blossom.png" alt="blossom" />
+        <img src="/invite/cherry-blossom.png" alt="blossom" />
       </div>
     );
   }

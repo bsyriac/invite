@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: '/wedding-invite',
+    basePath: '/invite',
     output: 'export',
 };
 
